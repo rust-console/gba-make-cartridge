@@ -118,7 +118,7 @@ fn validate_header_field(s: &str,
 fn run() -> Result<()> {
     let matches = App::new("gba-make-cartridge")
         .version("1.0")
-        .author("Russell McClellan <rmcclellan@gmail.com>")
+        .author("Russell McClellan <russell.mcclellan@gmail.com>")
         .about("Creates a gameboy cartridge from an ELF file")
         .arg(Arg::with_name("input")
                  .help("ELF file containing code")
