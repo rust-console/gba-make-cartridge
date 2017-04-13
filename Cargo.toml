@@ -1,0 +1,9 @@
+[package]
+authors = ["Russell McClellan <russell.mcclellan@gmail.com>"]
+name = "gba-make-cartridge"
+version = "0.1.0"
+
+[dependencies]
+clap = "~2.23.2"
+error-chain = "~0.10.0"
+tempfile = "^2.1.5"
