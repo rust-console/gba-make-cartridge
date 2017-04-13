@@ -2,6 +2,7 @@
 authors = ["Russell McClellan <russell.mcclellan@gmail.com>"]
 name = "gba-make-cartridge"
 version = "0.1.0"
+license = "MIT"
 
 [dependencies]
 clap = "~2.23.2"
