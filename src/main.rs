@@ -1,3 +1,5 @@
+#![deny(warnings)]
+
 extern crate clap;
 use std::path::Path;
 use std::fs::{OpenOptions};
@@ -53,7 +55,7 @@ fn objcopy(input_path_str: &str, output_path_str: &str) -> Result<()> {
             .status
             .code()
             .map(|c| format!("failed with code {}", c))
-            .unwrap_or(String::from("failed"));
+            .unwrap_or_else(|| String::from("failed"));
 
         bail!(format!("failed to extract binary image:\n`{} {}` {}:\n{}",
                       copy_prog,
@@ -180,9 +182,12 @@ fn run() -> Result<()> {
 
     let temp_file = NamedTempFile::new().chain_err(|| "failed to create temporary file")?;
 
-    objcopy(&input, &temp_file.path().to_str().unwrap())?;
+    objcopy(input,
+            temp_file.path()
+            .to_str()
+            .ok_or("could not get temporary file path")?)?;
 
-    fix_header_for_path(&temp_file.path(), title, game_code, manu_code, version)?;
+    fix_header_for_path(temp_file.path(), title, game_code, manu_code, version)?;
 
     std::fs::copy(
         &temp_file.path(),

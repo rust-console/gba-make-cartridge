@@ -28,12 +28,12 @@ pub fn fix_header<T: Write + Seek + Read>(
     version: u8) -> Result<()> {
     // first order of business: add the gba logo.
     cart_file.seek(SeekFrom::Start(0x04))?;
-    cart_file.write(GBA_LOGO)?;
-    cart_file.write(game_title)?;
-    cart_file.write(game_code)?;
-    cart_file.write(maker_code)?;
-    cart_file.write(FIXED_DATA)?;
-    cart_file.write(&[version])?;
+    cart_file.write_all(GBA_LOGO)?;
+    cart_file.write_all(game_title)?;
+    cart_file.write_all(game_code)?;
+    cart_file.write_all(maker_code)?;
+    cart_file.write_all(FIXED_DATA)?;
+    cart_file.write_all(&[version])?;
 
     let mut checksum_area = [0u8; 28];
     cart_file.seek(SeekFrom::Start(0xA0))?;
@@ -42,8 +42,7 @@ pub fn fix_header<T: Write + Seek + Read>(
     let checksum = -(0x19i8.wrapping_add(checksum_area.iter().fold(0i8, |a, n| a.wrapping_add(*n as i8))));
 
     cart_file.seek(SeekFrom::Start(0xBD))?;
-    cart_file.write(&[checksum as u8])?;
-    cart_file.write(&[0u8, 0u8])?;
+    cart_file.write_all(&[checksum as u8, 0u8, 0u8])?;
 
     Ok(())
 }
