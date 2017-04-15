@@ -11,7 +11,13 @@ Needs `armv4t-none-eabi-objcopy` on the path.  To get this on mac, try homebrew:
 brew install russellmcc/armv4t-toolchain/armv4t-none-eabi-binutils
 ```
 
-# how to build
+# how to install
+
+```
+cargo install gba-make-cartridge
+```
+
+# how to build locally
 
 ```
 cargo build
