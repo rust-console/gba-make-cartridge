@@ -3,10 +3,14 @@ authors = ["Russell McClellan <russell.mcclellan@gmail.com>"]
 name = "gba-make-cartridge"
 version = "1.0.0"
 license = "MIT"
+readme = "README.md"
+description = "A command line tool to build a game boy advance cartridge from an elf binary file."
 repository = "https://github.com/russellmcc/gba-make-cartridge"
-exclude = [
-  ".travis.yml",
-]
+categories = ["command-line-utilities", "development-tools", "embedded"]
+
+[badges.travis-ci]
+repository = "https://github.com/russellmcc/gba-make-cartridge",
+branch = "master"
 
 [dependencies]
 clap = "~2.23.2"
