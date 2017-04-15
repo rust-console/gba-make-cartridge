@@ -3,6 +3,7 @@ authors = ["Russell McClellan <russell.mcclellan@gmail.com>"]
 name = "gba-make-cartridge"
 version = "1.0.0"
 license = "MIT"
+repository = "https://github.com/russellmcc/gba-make-cartridge"
 exclude = [
   ".travis.yml",
 ]
