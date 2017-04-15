@@ -9,7 +9,7 @@ repository = "https://github.com/russellmcc/gba-make-cartridge"
 categories = ["command-line-utilities", "development-tools", "embedded"]
 
 [badges.travis-ci]
-repository = "https://github.com/russellmcc/gba-make-cartridge",
+repository = "https://github.com/russellmcc/gba-make-cartridge"
 branch = "master"
 
 [dependencies]
