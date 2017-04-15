@@ -3,8 +3,12 @@ authors = ["Russell McClellan <russell.mcclellan@gmail.com>"]
 name = "gba-make-cartridge"
 version = "1.0.0"
 license = "MIT"
+exclude = [
+  ".travis.yml",
+]
 
 [dependencies]
 clap = "~2.23.2"
 error-chain = "~0.10.0"
 tempfile = "^2.1.5"
+
