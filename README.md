@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/russellmcc/gba-make-cartridge.svg?branch=master)](https://travis-ci.org/russellmcc/gba-make-cartridge)
+
 `gba-make-cartridge` is a simple application to make a gameboy advance cartridge from an ELF file.
 
 # requirements
